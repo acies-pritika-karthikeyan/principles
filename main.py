@@ -1,30 +1,34 @@
-from Development import Development
-from Analytics import Analytics
 from Employee import Employee
-from HR import HR
-from Training import Training
 from ProductDetails import ProductDetails
+from ProjectDetails import ProjectDetails
+from TechnologyDetails import TechnologyDetails
+from HR import HR
+from Analytics import Analytics
+from Development import Development
+from Technology import Technology
+
 
 if __name__ == "__main__":
 
-   employee = Employee("Pritika", 22, 13000)
-   product_details = ProductDetails("edgeCore.ai", "In Progress")
-   dev = Development(employee, product_details)
+    employee1 = Employee(1, "Pritika", 22, 13000)
+    product_details = ProductDetails("edgeCore.ai", "In Progress")
+    dev = Development(employee1, product_details, "backend")
 
+    employee2 = Employee(2, "Aryan", 21, 12000)
+    project_details = ProjectDetails("Bose", "Modeling")
+    ds = Analytics(employee2, project_details)
 
-   dev.execution("backend")
-   
-#    dev = Development("Pritika", 22, 13000,"edgeCore.ai", "In Progess")
-#    ds = Analytics("Aryan", 21, 12000, "Bose", "Analysis Phase")
-#    hr = HR("Subhash", 25, 10000, 1)
-#    training = Training("Sai", 20, 11000, 2, "Technical Skills")
-   
-#    dev.to_work()
-#    dev.code_back_end()
-#    ds.to_pitch()
-#    ds.data_cleaning()
-#    hr.to_present()
-#    hr.report_generate()
-#    training.train_skill()
+    employee3 = Employee(3, "Subhash", 24, 12500)
+    hr = HR(employee3, "Filing")
+
+    # technology_details = TechnologyDetails("React.js", "Python")
+    technology_details = TechnologyDetails("Python")
+    tech = Technology(dev, technology_details)
+
+    dev.execution()
+    tech.execution()
+    ds.execution()
+    hr.execution()
+
 
 

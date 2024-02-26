@@ -1,5 +1,6 @@
 class Employee:
-   def __init__(self, name, age, salary):
+   def __init__(self, eid, name, age, salary):
+       self.eid = eid
        self.name = name
        self.age = age
        self.salary = salary

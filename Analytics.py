@@ -1,19 +1,29 @@
-from Employee import Employee
+class Analytics:
 
-class Analytics(Employee):
-   def __init__(self, name, age, salary, project_name, project_stage):
-       super().__init__(name, age, salary)
-       self.project_name = project_name
-       self.project_stage = project_stage
+    def __init__(self, employee2, project_details):
+        self.employee = employee2
+        self.project_details = project_details
 
-   def data_cleaning(self):
-       print(f"{self.name} is cleaning data for {self.project_name}.")
+    def data_cleaning(self):
+        print(f"{self.employee.name} is cleaning data for project {self.project_details.project_name}. Project Stage: {self.project_details.project_stage}.")
 
-   def do_eda(self):
-       print(f"{self.name} is performing exploratory data analysis on {self.project_name}.")
+    def do_eda(self):
+        print(f"{self.employee.name} is performing exploratory data analysis in project {self.project_details.project_name}. Project Stage: {self.project_details.project_stage}.")
 
-   def perform_modelling(self):
-       print(f"{self.name} is performing modeling on {self.project_name} data.")
+    def perform_modelling(self):
+        print(f"{self.employee.name} is performing modeling for project {self.project_details.project_name}. Project Stage: {self.project_details.project_stage}.")
 
-   def do_predictions(self):
-       print(f"{self.name} is making predictions for {self.project_name}.")
+    def do_predictions(self):
+        print(f"{self.employee.name} is making predictions for project {self.project_details.project_name}. Project Stage: {self.project_details.project_stage}.")
+
+    def execution(self):
+        if self.project_details.project_stage == 'Data cleaning':
+            self.data_cleaning()
+        elif self.project_details.project_stage == 'EDA':
+            self.do_eda()
+        elif self.project_details.project_stage == 'Modeling':
+            self.perform_modelling()
+        elif self.project_details.project_stage == 'Prediction':
+            self.do_predictions()
+        else:
+            print("Invalid")
